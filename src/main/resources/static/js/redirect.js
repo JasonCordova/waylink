@@ -34,7 +34,7 @@ async function handleTimer(){
     }
 
     try {
-        // 🔑 Send record to server with CSRF token
+
         const response = await fetch("/test", {
             method: "POST",
             headers: {
