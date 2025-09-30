@@ -201,9 +201,10 @@ a {
 .wrapper-title {
     font-size: 4.5em;
     font-weight: 500;
-    line-height: 0.95em;
+    line-height: 1em;
     margin-bottom: 0.2em;
     color: white;
+    max-width: 6em;
 }
 
 .wrapper-title span {
@@ -669,3 +670,46 @@ a:hover .table-icon{
     font-weight: 500;
     color: #414141;
 }
+
+/* ----------------- MEDIA QUERIES --------------- */
+
+@media (max-width: 575px) {
+
+    .wrapper-title {
+        font-size: 3.5em;
+    }
+
+    .wrapper-desc {
+        font-size: 1.25em;
+    }
+
+    .button {
+        font-size: 1em;
+    }
+
+    .wrapper-intro {
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 725px) {
+
+    .fh {
+        padding: 0em;
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    .fh {
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1199px) { }
+
+@media (max-width: 1399px) { }
