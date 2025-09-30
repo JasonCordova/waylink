@@ -82,4 +82,15 @@ public class UrlService {
         urlRepository.deleteById(id);
     }
 
+    public boolean deleteUrlByShortUrl(String shortUrl){
+
+        urlRepository.findByShortUrl(shortUrl).map(entity -> {
+            urlRepository.deleteById(entity.getId());
+            return true;
+        })
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return false;
+
+    }
+
 }
