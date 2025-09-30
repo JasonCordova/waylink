@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waylink | Shorten</title>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+    <script th:src="@{/js/shorten.js}" defer></script>
+    <link rel="stylesheet" href="https://use.typekit.net/unu8iqb.css">
+</head>
+<body>
+
+    <div th:replace="fragments/header :: headerFragment('')"></div>
+
+    <div class="content fc full-height">
+
+        <div class="shorten-title">URL Shortener</div>
+        <div class="shorten-desc">Shorten your link and start tracking clicks — perfect for sharing anywhere.</div>
+        <form action="/shorten" method="post" class="shorten-link-holder">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <input id="shorten-input" name="url" placeholder="Enter your URL here" class="shorten-input" type="text">
+            <button disabled type="submit" id="shorten-button">Shorten</button>
+        </form>
+        <span id="flag">
+
+            <svg id="valid" class="display-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M117 .42c14.45-1.76 35.17.74 49 5.25 24.07 7.85 44.16 20.86 60.56 40.33 40.54 48.13 39.08 121.62-3.49 168-11.38 12.4-22.99 21.26-38.07 28.75-20.33 10.11-39.49 13.51-62 13.25-11.35-.14-25.24-3.05-36-6.67C15.38 225.25-19.53 144.75 10.86 76 24.66 44.79 50.04 20.49 82 8.42c13.66-5.15 20.94-5.99 35-8Zm62 89.01c-6.54 2.57-10.96 8.78-16 13.48L129 135c-3.23 3.22-14.28 14.9-18 15.88-3.66.97-7.65-3.6-10-5.89-6.53-6.37-12.68-13.36-20-19.1-4.28-2.97-9.21-4.16-13.69 0-4.56 3.9-3.7 9.69 0 14.11L97 169c4.52 4.49 8.92 9.58 16 7.49 5.34-1.57 13.51-11.26 18-15.32l29-27.21 16-15.68c5.42-4.78 16.97-13.25 15.76-21.28-1.04-6.89-6.79-8.42-12.76-7.57Z"/></svg>
+            <svg id="invalid" class="display-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="M113 .21h17c11.34-.19 26.34 2.85 37 6.74 14.56 5.32 27.16 12.21 39 22.35 41.73 35.76 54.91 92.98 34.8 143.7-4.8 12.09-13.89 26.62-22.84 36-10.54 11.04-20.25 19.43-33.96 26.4-22.86 11.61-40.62 14.89-66 14.6-6.41-.08-17.67-2.05-24-3.63C55.93 236.9 24.28 209.32 9.45 173 1.88 154.46-.03 139.79 0 120 .07 77.38 27.19 35.94 64 15.66 81.12 6.23 94.04 3.29 113 .21ZM124 112c-4.2-5.87-12.62-13.65-18-19-3.08-3.06-6.5-7.08-11-7.76-7.09-1.07-11.4 5.24-9.49 11.76 1.56 5.3 13.17 15.67 17.49 20 1.76 1.77 5.96 5.4 5.96 8 0 2.6-4.2 6.23-5.96 8-4.54 4.56-15.6 14.32-17.35 20-2.49 8.07 4.78 14.75 12.35 10.98 2.78-1.39 7.62-6.6 10-8.98l17-17c4.08 5.7 9.99 10.99 15 16 2.98 2.98 7.31 7.71 11 9.55 7.26 3.62 15.71-.84 13.68-9.55-1.14-4.88-14.54-16.85-18.68-21-1.76-1.77-5.96-5.4-5.96-8 0-2.6 4.2-6.23 5.96-8 5.46-5.49 20.02-16.81 18.76-24.99-1.02-6.57-8.43-8.43-13.76-5.7-4.49 2.31-22.16 20.85-27 25.69Z"/></svg>
+            <span id="flag-text">&nbsp;</span>
+
+        </span>
+
+    </div>
+
+</body>
+</html>

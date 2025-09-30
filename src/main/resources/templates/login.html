@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waylink | Login</title>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.typekit.net/unu8iqb.css">
+</head>
+<body class="fb-color">
+
+    <div th:replace="fragments/header :: headerFragment('inverted')"></div>
+    <div class="content fb-content">
+
+        <form id="login-form">
+
+            <div class="login-title">Login</div>
+<!--            <div class="login-opt">-->
+
+<!--                <span class="login-label">Email</span>-->
+<!--                <input type="text" name="username"></input>-->
+
+<!--            </div>-->
+
+<!--            <div class="login-opt">-->
+
+<!--                <span class="login-label">Password</span>-->
+<!--                <input type="password" name="password"></input>-->
+
+<!--            </div>-->
+
+<!--            <div class="login-button">Log In</div>-->
+
+<!--            <div class="login-with">-->
+
+<!--                <div class="login-border"></div>-->
+<!--                <span class="login-with-label">Log in with</span>-->
+<!--                <div class="login-border"></div>-->
+
+<!--            </div>-->
+
+            <a th:href="@{/oauth2/authorization/google}" class="google-button">
+
+                <img class="google-image" th:src="@{/images/google.png}" alt="Google"/>
+                <span class="google-label">Google</span>
+
+            </a>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waylink | URL Shortener</title>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.typekit.net/unu8iqb.css">
+    <script
+            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js"
+            type="module"
+    ></script>
+</head>
+<body class="fb-color">
+
+    <div th:replace="fragments/header :: headerFragment('inverted')"></div>
+
+    <div class="content fs full-height">
+
+        <div class="fh">
+
+            <div class="wrapper-intro">
+
+                <div class="wrapper-title">
+
+                    Short links,<br/>big insights.
+
+                </div>
+                <div class="wrapper-desc">Shorten and share links effortlessly, with real-time analytics to track clicks and engagement.</div>
+                <a class="button inverted" href="/shorten">Start now
+                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 578 440"><path d="m397.84 272.5-58.8 58.75c-9.81 9.8-24.21 22.22-29.43 35-14.82 36.27 11.46 72.94 50.7 72.5 22.71-.26 34.01-13.98 48.79-28.75l57.55-57.5 80.07-80c14.33-14.31 29.75-26.7 30.03-48.75.06-5.17.31-11.27-.95-16.25-5.27-20.76-26.66-37.59-41.59-52.5L420.36 41.25c-19.53-19.51-33.7-40.34-63.8-40-37.55.43-60.43 38.5-46.97 72.5 5.21 13.14 22.9 28.45 33.21 38.75l55.04 55H56.3c-9.21.01-17.92 1.23-26.27 5.34C-3.59 189.4-9 235.19 18.77 259.78c10.46 9.24 23.85 12.7 37.53 12.72h341.54Z"/></svg>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

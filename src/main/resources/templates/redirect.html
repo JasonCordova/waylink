@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waylink | Redirect</title>
+    <link th:href="@{/css/index.css}" rel="stylesheet"/>
+    <script th:src="@{/js/redirect.js}" defer></script>
+    <link rel="stylesheet" href="https://use.typekit.net/unu8iqb.css">
+    <meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}">
+</head>
+<body>
+
+    <div th:replace="fragments/header :: headerFragment('')"></div>
+
+    <div class="content fc full-height">
+
+        <img class="loading" th:src="@{/images/loading.png}" alt="Loading..."/>
+        <span id="redirect-label">You're being redirected to the following page</span>
+        <a id="redirect-url" th:href="${url.longUrl}"
+           th:attr="data-redirect=${url.longUrl},
+           data-url-id=${url.id},
+           data-short-url=${url.shortUrl}"
+           th:text="${#strings.replace(#strings.replace(#strings.replace(url.longUrl, 'https://', ''), 'http://', ''), 'www.', '')}"></a>
+
+    </div>
+
+</body>
+</html>
