@@ -95,6 +95,7 @@ body {
 :root {
 
     --blue: #0066FF;
+    --dark-blue: #0054d2;
     --gray: #DBDBDB;
     --light-gray: #797979;
 }
@@ -145,6 +146,10 @@ body {
 
 .button:hover .button-icon {
     transform: translate(0%);
+}
+
+.button:not(.inverted):hover {
+    background-color: var(--dark-blue);
 }
 
 .button-icon {
@@ -307,6 +312,11 @@ button {
     font-size: 1.5em;
     font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.2s ease-out;
+}
+
+#shorten-button:hover {
+    background-color: var(--dark-blue);
 }
 
 .shorten-input:focus {
@@ -478,6 +488,7 @@ button {
     font-weight: 600;
     text-decoration: none;
     align-items: center;
+    transition: background-color .2s ease-out;
 }
 
 .header a {
@@ -727,6 +738,18 @@ a:hover .table-icon{
     word-break: break-all;
     box-shadow: 0px 0px 8px #00000000;
     transition: border .2s ease-out, box-shadow .2s ease-out;
+    justify-content: space-between;
+}
+
+.page-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-flex .button {
+    font-size: 1em !important;
 }
 
 .url-bubble:hover {
@@ -782,7 +805,6 @@ a:hover .table-icon{
 
 .url-bubbles-grid {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
     justify-content: space-between;
