@@ -12,5 +12,15 @@ services:
     volumes:
       - waylink_pg_data:/var/lib/postgresql/data
 
+  waylink-app:
+    build: .
+    container_name: waylink-app
+    depends_on:
+      - postgres
+    environment:
+
+    ports:
+      - 8080:8080
+
 volumes:
   waylink_pg_data:
