@@ -15,7 +15,8 @@ public class SecurityConfiguration {
 
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/favicon.ico", "/css/**", "/js/**", "/images/**").permitAll()
+                        .requestMatchers("/favicon.ico").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                         .requestMatchers("/ws/**", "/topic/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/shorten", "/urls", "/urls/all", "/{shortUrl:[a-zA-Z0-9]{6,10}}/stats").authenticated()
                         .requestMatchers(HttpMethod.GET, "/404", "/", "/{shortUrl:[a-zA-Z0-9]{6,10}}", "/login").permitAll()
